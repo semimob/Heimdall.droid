@@ -69,7 +69,7 @@ public class OAuth2AccessTokenManager<TAccessToken extends OAuth2AccessToken> {
             throw new IllegalArgumentException("Grant MUST NOT be null.");
         }
 
-        return Single.fromObservable(grant.grantNewAccessToken()
+        return grant.grantNewAccessToken()
             .doOnSuccess(accessToken -> {
                 if (accessToken.expiresIn != null) {
                     Calendar expirationDate = (Calendar) calendar.clone();
@@ -77,7 +77,7 @@ public class OAuth2AccessTokenManager<TAccessToken extends OAuth2AccessToken> {
                     accessToken.expirationDate = expirationDate;
                 }
                 mStorage.storeAccessToken(accessToken);
-            }).toObservable().cache());
+            });
     }
 
     /**
