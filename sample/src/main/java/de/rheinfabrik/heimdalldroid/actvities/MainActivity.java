@@ -12,13 +12,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.webkit.CookieManager;
-
-import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
-
-import java.util.List;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import de.rheinfabrik.heimdalldroid.R;
 import de.rheinfabrik.heimdalldroid.adapter.TraktTvListsRecyclerViewAdapter;
 import de.rheinfabrik.heimdalldroid.network.TraktTvApiFactory;
@@ -26,9 +22,10 @@ import de.rheinfabrik.heimdalldroid.network.models.TraktTvList;
 import de.rheinfabrik.heimdalldroid.network.oauth2.TraktTvOauth2AccessTokenManager;
 import de.rheinfabrik.heimdalldroid.utils.AlertDialogFactory;
 import de.rheinfabrik.heimdalldroid.utils.IntentFactory;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import java.util.List;
 import retrofit.RetrofitError;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
 
 /**
  * Activity showing either the list of the user's repositories or the login screen.

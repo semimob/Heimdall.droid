@@ -7,8 +7,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
-
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -18,7 +17,8 @@ import de.rheinfabrik.heimdalldroid.R;
 import de.rheinfabrik.heimdalldroid.network.oauth2.TraktTvAuthorizationCodeGrant;
 import de.rheinfabrik.heimdalldroid.network.oauth2.TraktTvOauth2AccessTokenManager;
 import de.rheinfabrik.heimdalldroid.utils.AlertDialogFactory;
-import rx.android.schedulers.AndroidSchedulers;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
 
 /**
  * Activity used to let the user login with his GitHub credentials.
